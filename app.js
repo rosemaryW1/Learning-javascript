@@ -1,6 +1,29 @@
-let input = prompt("Hey,say something!")
-while(true){
-    input = prompt(input);
-    if(input.toLowerCase() === "stop copying me ") break;
+// let input = prompt("Hey,say something!")
+// while(true){
+//     input = prompt(input);
+//     if(input.toLowerCase() === "stop copying me ") break;
+// }
+// console.log("OKAY YOU WIN!")
+
+
+const makeRandColor=() =>{
+    const r =Math.floor(Math.random() * 255);
+    const g =Math.floor(Math.random() * 255);
+    const b =Math.floor(Math.random() * 255);
+    return `rgb(${r},${g},${b})`;
+
+
+
+
 }
-console.log("OKAY YOU WIN!")
+
+const buttons=document.querySelectorAll('button');
+
+for(let button of buttons){
+    button.addEventListener('click',function(){
+        button.style.backgroundColor= makeRandColor();
+        button.style.color=makeRandColor();
+    })
+
+
+}
